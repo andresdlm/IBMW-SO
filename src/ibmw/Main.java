@@ -27,21 +27,409 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        productoresPanel = new javax.swing.JPanel();
+        despachoLabel = new javax.swing.JLabel();
+        diasDespachoLabel = new javax.swing.JLabel();
+        productoresLabel = new javax.swing.JLabel();
+        ruedasProdPanel = new javax.swing.JPanel();
+        agregarProdRuedasButton = new javax.swing.JButton();
+        prodRuedasLabel = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        motoresProdPanel = new javax.swing.JPanel();
+        agregarProdMotoresButton = new javax.swing.JButton();
+        prodMotoresLabel = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
+        parabProdPanel = new javax.swing.JPanel();
+        agregarProdParabrisasButton = new javax.swing.JButton();
+        prodParabrisasLabel = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jefeLabel = new javax.swing.JLabel();
+        estadoJefeLabel = new javax.swing.JLabel();
+        gerenteLabel = new javax.swing.JLabel();
+        estadoGerenteLabel = new javax.swing.JLabel();
+        almacenPanel = new javax.swing.JPanel();
+        almacenLabel = new javax.swing.JLabel();
+        ensambladoresLabel = new javax.swing.JLabel();
+        ruedasLabel = new javax.swing.JLabel();
+        parabrisasLabel = new javax.swing.JLabel();
+        motoresLabel = new javax.swing.JLabel();
+        carrosLabel = new javax.swing.JLabel();
+        nRuedasLabel = new javax.swing.JLabel();
+        nParabrisasLabel = new javax.swing.JLabel();
+        nMotoresLabel = new javax.swing.JLabel();
+        nCarrosLabel = new javax.swing.JLabel();
+        maxLabel = new javax.swing.JLabel();
+        maxRuedasLabel = new javax.swing.JLabel();
+        maxParabrisasLabel = new javax.swing.JLabel();
+        maxMotoresLabel = new javax.swing.JLabel();
+        maxCarrosLabel = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        agregarEnsambladorButton = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setPreferredSize(new java.awt.Dimension(800, 450));
+
+        productoresPanel.setBackground(new java.awt.Color(225, 225, 225));
+        productoresPanel.setPreferredSize(new java.awt.Dimension(650, 430));
+
+        despachoLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        despachoLabel.setText("Dias para el próximo despacho:");
+
+        diasDespachoLabel.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        diasDespachoLabel.setText("5");
+
+        productoresLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        productoresLabel.setText("Productores:");
+
+        ruedasProdPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ruedasProdPanel.setPreferredSize(new java.awt.Dimension(180, 0));
+
+        agregarProdRuedasButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        agregarProdRuedasButton.setText("+");
+        agregarProdRuedasButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarProdRuedasButtonActionPerformed(evt);
+            }
+        });
+
+        prodRuedasLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        prodRuedasLabel.setText("Prod. Ruedas");
+
+        javax.swing.GroupLayout ruedasProdPanelLayout = new javax.swing.GroupLayout(ruedasProdPanel);
+        ruedasProdPanel.setLayout(ruedasProdPanelLayout);
+        ruedasProdPanelLayout.setHorizontalGroup(
+            ruedasProdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ruedasProdPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(prodRuedasLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(agregarProdRuedasButton)
+                .addContainerGap())
+            .addComponent(jSeparator3)
+        );
+        ruedasProdPanelLayout.setVerticalGroup(
+            ruedasProdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ruedasProdPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ruedasProdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(agregarProdRuedasButton)
+                    .addComponent(prodRuedasLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(284, Short.MAX_VALUE))
+        );
+
+        motoresProdPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        motoresProdPanel.setPreferredSize(new java.awt.Dimension(180, 100));
+
+        agregarProdMotoresButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        agregarProdMotoresButton.setText("+");
+        agregarProdMotoresButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarProdMotoresButtonActionPerformed(evt);
+            }
+        });
+
+        prodMotoresLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        prodMotoresLabel.setText("Prod. Motores");
+
+        javax.swing.GroupLayout motoresProdPanelLayout = new javax.swing.GroupLayout(motoresProdPanel);
+        motoresProdPanel.setLayout(motoresProdPanelLayout);
+        motoresProdPanelLayout.setHorizontalGroup(
+            motoresProdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, motoresProdPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(prodMotoresLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addComponent(agregarProdMotoresButton)
+                .addContainerGap())
+            .addComponent(jSeparator5)
+        );
+        motoresProdPanelLayout.setVerticalGroup(
+            motoresProdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(motoresProdPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(motoresProdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(agregarProdMotoresButton)
+                    .addComponent(prodMotoresLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        parabProdPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        parabProdPanel.setPreferredSize(new java.awt.Dimension(180, 339));
+
+        agregarProdParabrisasButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        agregarProdParabrisasButton.setText("+");
+        agregarProdParabrisasButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarProdParabrisasButtonActionPerformed(evt);
+            }
+        });
+
+        prodParabrisasLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        prodParabrisasLabel.setText("Prod. Parabrisas");
+
+        javax.swing.GroupLayout parabProdPanelLayout = new javax.swing.GroupLayout(parabProdPanel);
+        parabProdPanel.setLayout(parabProdPanelLayout);
+        parabProdPanelLayout.setHorizontalGroup(
+            parabProdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(parabProdPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(prodParabrisasLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(agregarProdParabrisasButton)
+                .addContainerGap())
+            .addComponent(jSeparator4)
+        );
+        parabProdPanelLayout.setVerticalGroup(
+            parabProdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(parabProdPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(parabProdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(agregarProdParabrisasButton)
+                    .addComponent(prodParabrisasLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jefeLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jefeLabel.setText("Jefe:");
+
+        estadoJefeLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        estadoJefeLabel.setText("Durmiendo...");
+
+        gerenteLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        gerenteLabel.setText("Gerente:");
+
+        estadoGerenteLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        estadoGerenteLabel.setText("Durmiendo...");
+
+        javax.swing.GroupLayout productoresPanelLayout = new javax.swing.GroupLayout(productoresPanel);
+        productoresPanel.setLayout(productoresPanelLayout);
+        productoresPanelLayout.setHorizontalGroup(
+            productoresPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator2)
+            .addGroup(productoresPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(productoresPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(productoresPanelLayout.createSequentialGroup()
+                        .addComponent(productoresLabel)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(productoresPanelLayout.createSequentialGroup()
+                        .addGroup(productoresPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(productoresPanelLayout.createSequentialGroup()
+                                .addComponent(despachoLabel)
+                                .addGap(18, 18, 18)
+                                .addComponent(diasDespachoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(productoresPanelLayout.createSequentialGroup()
+                                .addComponent(ruedasProdPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(parabProdPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(motoresProdPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(productoresPanelLayout.createSequentialGroup()
+                                .addComponent(jefeLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(estadoJefeLabel)
+                                .addGap(120, 120, 120)
+                                .addComponent(gerenteLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(estadoGerenteLabel)))
+                        .addGap(0, 30, Short.MAX_VALUE))))
+        );
+        productoresPanelLayout.setVerticalGroup(
+            productoresPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(productoresPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(productoresPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(despachoLabel)
+                    .addComponent(diasDespachoLabel))
+                .addGap(18, 18, 18)
+                .addComponent(productoresLabel)
+                .addGap(18, 18, 18)
+                .addGroup(productoresPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(parabProdPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ruedasProdPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
+                    .addComponent(motoresProdPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(productoresPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jefeLabel)
+                    .addComponent(estadoJefeLabel)
+                    .addComponent(gerenteLabel)
+                    .addComponent(estadoGerenteLabel))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        almacenPanel.setPreferredSize(new java.awt.Dimension(150, 400));
+
+        almacenLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        almacenLabel.setText("Almacén:");
+
+        ensambladoresLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        ensambladoresLabel.setText("Ensambladores:");
+
+        ruedasLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        ruedasLabel.setText("Ruedas:");
+
+        parabrisasLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        parabrisasLabel.setText("Parabrisas:");
+
+        motoresLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        motoresLabel.setText("Motores:");
+
+        carrosLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        carrosLabel.setText("Carros:");
+
+        nRuedasLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        nRuedasLabel.setText("5");
+
+        nParabrisasLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        nParabrisasLabel.setText("5");
+
+        nMotoresLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        nMotoresLabel.setText("5");
+
+        nCarrosLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        nCarrosLabel.setText("5");
+
+        maxLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        maxLabel.setText("Max.");
+
+        maxRuedasLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        maxRuedasLabel.setText("6");
+
+        maxParabrisasLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        maxParabrisasLabel.setText("6");
+
+        maxMotoresLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        maxMotoresLabel.setText("6");
+
+        maxCarrosLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        maxCarrosLabel.setText("6");
+
+        agregarEnsambladorButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        agregarEnsambladorButton.setText("+");
+        agregarEnsambladorButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarEnsambladorButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout almacenPanelLayout = new javax.swing.GroupLayout(almacenPanel);
+        almacenPanel.setLayout(almacenPanelLayout);
+        almacenPanelLayout.setHorizontalGroup(
+            almacenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(almacenPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(almacenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(almacenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(almacenPanelLayout.createSequentialGroup()
+                            .addGroup(almacenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(almacenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(motoresLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(parabrisasLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(ruedasLabel)
+                                .addComponent(carrosLabel))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(almacenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(nCarrosLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                                .addComponent(nParabrisasLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(nMotoresLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(nRuedasLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(almacenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(maxRuedasLabel)
+                                .addComponent(maxParabrisasLabel)
+                                .addComponent(maxMotoresLabel)
+                                .addComponent(maxCarrosLabel)))
+                        .addGroup(almacenPanelLayout.createSequentialGroup()
+                            .addComponent(almacenLabel)
+                            .addGap(36, 36, 36)
+                            .addComponent(maxLabel))
+                        .addComponent(jSeparator1))
+                    .addGroup(almacenPanelLayout.createSequentialGroup()
+                        .addComponent(ensambladoresLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(agregarEnsambladorButton)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        almacenPanelLayout.setVerticalGroup(
+            almacenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(almacenPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(almacenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(almacenLabel)
+                    .addComponent(maxLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(almacenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ruedasLabel)
+                    .addComponent(nRuedasLabel)
+                    .addComponent(maxRuedasLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(almacenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(parabrisasLabel)
+                    .addComponent(nParabrisasLabel)
+                    .addComponent(maxParabrisasLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(almacenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(motoresLabel)
+                    .addComponent(nMotoresLabel)
+                    .addComponent(maxMotoresLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(almacenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(carrosLabel)
+                    .addComponent(nCarrosLabel)
+                    .addComponent(maxCarrosLabel))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(almacenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ensambladoresLabel)
+                    .addComponent(agregarEnsambladorButton))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(productoresPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 626, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(almacenPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(productoresPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
+            .addComponent(almacenPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void agregarEnsambladorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarEnsambladorButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_agregarEnsambladorButtonActionPerformed
+
+    private void agregarProdRuedasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarProdRuedasButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_agregarProdRuedasButtonActionPerformed
+
+    private void agregarProdParabrisasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarProdParabrisasButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_agregarProdParabrisasButtonActionPerformed
+
+    private void agregarProdMotoresButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarProdMotoresButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_agregarProdMotoresButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +467,44 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton agregarEnsambladorButton;
+    private javax.swing.JButton agregarProdMotoresButton;
+    private javax.swing.JButton agregarProdParabrisasButton;
+    private javax.swing.JButton agregarProdRuedasButton;
+    private javax.swing.JLabel almacenLabel;
+    private javax.swing.JPanel almacenPanel;
+    private javax.swing.JLabel carrosLabel;
+    private javax.swing.JLabel despachoLabel;
+    private javax.swing.JLabel diasDespachoLabel;
+    private javax.swing.JLabel ensambladoresLabel;
+    private javax.swing.JLabel estadoGerenteLabel;
+    private javax.swing.JLabel estadoJefeLabel;
+    private javax.swing.JLabel gerenteLabel;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JLabel jefeLabel;
+    private javax.swing.JLabel maxCarrosLabel;
+    private javax.swing.JLabel maxLabel;
+    private javax.swing.JLabel maxMotoresLabel;
+    private javax.swing.JLabel maxParabrisasLabel;
+    private javax.swing.JLabel maxRuedasLabel;
+    private javax.swing.JLabel motoresLabel;
+    private javax.swing.JPanel motoresProdPanel;
+    private javax.swing.JLabel nCarrosLabel;
+    private javax.swing.JLabel nMotoresLabel;
+    private javax.swing.JLabel nParabrisasLabel;
+    private javax.swing.JLabel nRuedasLabel;
+    private javax.swing.JPanel parabProdPanel;
+    private javax.swing.JLabel parabrisasLabel;
+    private javax.swing.JLabel prodMotoresLabel;
+    private javax.swing.JLabel prodParabrisasLabel;
+    private javax.swing.JLabel prodRuedasLabel;
+    private javax.swing.JLabel productoresLabel;
+    private javax.swing.JPanel productoresPanel;
+    private javax.swing.JLabel ruedasLabel;
+    private javax.swing.JPanel ruedasProdPanel;
     // End of variables declaration//GEN-END:variables
 }
