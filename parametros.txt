@@ -1,10 +1,13 @@
-tiempo en seg que dura un dia
-cant de dias entre despachos
-cant max de ruedas
-cant max de parabrisas
-cant max de motores
-cant inicial prod ruedas
-cant inicial prod parabrisas
-cant inicial prod motores
-La cantidad inicial de ensambladores.
-La cantidad máxima de ensambladores.
+Duracion de un dia:2
+Dias para despachar:8
+Capacidad de ruedas:30
+Capacidad de parabrisas:25
+Capacidad de motores:15
+Maximo de productores de ruedas:3
+Maximo de productores de parabrisas:4
+Maximo de productores de motores:2
+Maximo de ensambladores:6
+Cantidad inicial de Productores de ruedas:2
+Cantidad inicial de Productores de parabrisas:2
+Cantidad inicial de Productores de motores:1
+Cantidad inicial de Ensambladores:3
