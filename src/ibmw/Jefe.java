@@ -1,4 +1,5 @@
 package ibmw;
+
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -12,21 +13,20 @@ public class Jefe extends Thread{
     private Semaphore semaphore;
 
     public Jefe(int diasParaDespacho, int tiempoTrabajo, int tiempoDescanso, Semaphore semaphore) {
-        this.diasParaDespacho = diasParaDespacho;
+        Jefe.diasParaDespacho = diasParaDespacho;
         this.dias = diasParaDespacho;
         this.tiempoTrabajo = tiempoTrabajo;
         this.tiempoDescanso = tiempoDescanso;
-        this.estado = false;
+        estado = false;
         this.semaphore = semaphore;
     }
-    
-    //Methods
+
     @Override
     public void run() {
         while (true) {
             try {
                 this.semaphore.acquire();
-                this.estado = true;
+                estado = true;
                 Thread.sleep(tiempoTrabajo);
 
                 if (diasParaDespacho != 0) {
@@ -34,9 +34,7 @@ public class Jefe extends Thread{
                 } else {
                     diasParaDespacho = dias;
                 }
-
-
-                this.estado = false;
+                estado = false;
                 this.semaphore.release();
 
                 Thread.sleep(tiempoDescanso);

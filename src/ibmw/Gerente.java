@@ -1,5 +1,5 @@
-
 package ibmw;
+
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -7,16 +7,15 @@ import java.util.logging.Logger;
 public class Gerente extends Thread {
     
     private static boolean estado;
-    private int diasParaDespacho, minTiempo, maxTiempo;
+    private int minTiempo, maxTiempo;
     public static int carros;
     private Semaphore mutex;
 
     //Constructor
-    public Gerente(int minTiempo, int maxTiempo, int diasParaDespacho, Semaphore mutex) {
+    public Gerente(int minTiempo, int maxTiempo, Semaphore mutex) {
         this.maxTiempo = maxTiempo;
         this.minTiempo = minTiempo;
-        this.diasParaDespacho = diasParaDespacho;
-        this.estado = true;
+        estado = true;
         this.mutex = mutex;
     }
     
@@ -27,16 +26,16 @@ public class Gerente extends Thread {
             try {
 
                 int random = ((int) (Math.random() * (this.maxTiempo - this.minTiempo)) + this.minTiempo);
-                this.estado = true;
+                estado = true;
                 Thread.sleep(this.minTiempo * 4 - random);   //Verificar que funciona sin el this.minTiempo*4
 
                 this.mutex.acquire();
 
                 if (Jefe.getDiasRestantes() == 0) {
-                    this.carros = 0;
+                    carros = 0;
                 }
 
-                this.estado = false;
+                estado = false;
                 this.mutex.release();
                 Thread.sleep(random);
             } catch (InterruptedException ex) {

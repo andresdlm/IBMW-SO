@@ -1,5 +1,5 @@
-
 package ibmw;
+
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -10,18 +10,16 @@ public class Productor extends Thread{
     private Semaphore mutex, sProductor, sEnsamblador;
     private int tiempo, type;
     private boolean contratar;
-    private String nombre;
 
-    public Productor(Semaphore mutex, Semaphore sProductor, Semaphore sEnsamblador, int type, String nombre) {
+    public Productor(Semaphore mutex, Semaphore sProductor, Semaphore sEnsamblador, int type) {
         this.mutex = mutex;
         this.sProductor = sProductor;
         this.sEnsamblador = sEnsamblador;
         this.type = type;
         this.contratar = true;
-        this.nombre = nombre;
     }
     
-    public Productor(Almacen alm, Semaphore mutex, Semaphore sProductor, Semaphore sEnsamblador, int tiempo, int type, String nombre) {
+    public Productor(Almacen alm, Semaphore mutex, Semaphore sProductor, Semaphore sEnsamblador, int tiempo, int type) {
         this.alm = alm;
         this.mutex = mutex;
         this.sProductor = sProductor;
@@ -29,7 +27,6 @@ public class Productor extends Thread{
         this.tiempo = tiempo;
         this.type = type;
         this.contratar = true;
-        this.nombre = nombre;
         System.out.println("Productor contratado!");
     }
     
@@ -42,20 +39,19 @@ public class Productor extends Thread{
                 this.mutex.acquire();
                 switch (this.type) {
                     case 1:
-                        this.alm.producir(Fabrica.rPointer, type);
-                        System.out.println("Rueda Producida" + this.alm.getSpaceLeft());
+                        System.out.println("Rueda Producida");
                         Fabrica.rPointer = (Fabrica.rPointer + 1) % this.alm.getCapacidad();
                         Fabrica.aggContadorR();
                         break;
                     case 2:
-                        this.alm.producir(Fabrica.pPointer, type);
-                        System.out.println("Parabrisas Producido" + this.alm.getSpaceLeft());
+
+                        System.out.println("Parabrisas Producido");
                         Fabrica.pPointer = (Fabrica.pPointer + 1) % this.alm.getCapacidad();
                         Fabrica.aggContadorP();
                         break;
                     case 3:
-                        this.alm.producir(Fabrica.mPointer, type);
-                        System.out.println("Motor Producido" + this.alm.getSpaceLeft());
+
+                        System.out.println("Motor Producido");
                         Fabrica.mPointer = (Fabrica.mPointer + 1) % this.alm.getCapacidad();
                         Fabrica.aggContadorM();
                         break;

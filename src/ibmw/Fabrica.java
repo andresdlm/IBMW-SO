@@ -1,5 +1,5 @@
-
 package ibmw;
+
 import java.util.concurrent.Semaphore;
 import javax.swing.JOptionPane;
 
@@ -33,18 +33,17 @@ public class Fabrica {
     public static int rPointer, pPointer, mPointer, rCosPointer, pCosPointer, mCosPointer;
 
     private int tiempoDia;
-    private int diaHastaDespacho;
+
     /*private App app;*/
 
 
-    public Fabrica(int tiempoDia, int diaHastaDespacho, int rProdLimit, int pProdLimit, int mProdLimit, int ensambladoresLimit, int rProdInit, int pProdInit, int mProdInit, int ensambladorInit, int rAlmacenLimit, int pAlmacenLimit, int mAlmacenLimit, IBMW IBMW) {
+    public Fabrica(int tiempoDia, int diaHastaDespacho, int rProdLimit, int pProdLimit, int mProdLimit, int ensambladoresLimit, int rProdInit, int pProdInit, int mProdInit, int ensambladorInit, int rAlmacenLimit, int pAlmacenLimit, int mAlmacenLimit) {
 
         this.tiempoDia = tiempoDia;
-        this.diaHastaDespacho = diaHastaDespacho;
 
-        this.rAlmacen = new Almacen(rAlmacenLimit, "Rueda");
-        this.pAlmacen  = new Almacen(pAlmacenLimit, "Parabrisas");
-        this.mAlmacen = new Almacen(mAlmacenLimit, "Motor");
+        this.rAlmacen = new Almacen(rAlmacenLimit);
+        this.pAlmacen  = new Almacen(pAlmacenLimit);
+        this.mAlmacen = new Almacen(mAlmacenLimit);
 
         this.srProductor = new Semaphore(rAlmacenLimit);
         this.spProductor = new Semaphore(pAlmacenLimit);
@@ -98,8 +97,8 @@ public class Fabrica {
             this.contrEnsamblador();
         }
 
-        this.gerente = new Gerente(this.getDias(0.25), this.getDias(0.75), this.diaHastaDespacho, this.sJefe);
-        this.jefe = new Jefe(this.diaHastaDespacho, this.getDias(0.0625), this.getDias(0.9375), this.sJefe);
+        this.gerente = new Gerente(this.getDias(0.25), this.getDias(0.75), this.sJefe);
+        this.jefe = new Jefe(diaHastaDespacho, this.getDias(0.0625), this.getDias(0.9375), this.sJefe);
         this.jefe.start();
         this.gerente.start();
     }
@@ -115,7 +114,7 @@ public class Fabrica {
         } else {
             for (int i = 0; i < this.rProductor.length; i++) {
                 if (this.rProductor[i] == null) {
-                    this.rProductor[i] = new Productor(rAlmacen, srMutex, srProductor, srEnsamblador, this.getDias(1), 1, "Productor Rueda");
+                    this.rProductor[i] = new Productor(rAlmacen, srMutex, srProductor, srEnsamblador, this.getDias(1), 1);
                     this.rProductor[i].start();
                     this.rProdContador++;
                    /* if (!this.app.getH1().isEnabled()) {
@@ -136,7 +135,7 @@ public class Fabrica {
         } else {
             for (int i = 0; i < this.pProductor.length; i++) {
                 if (this.pProductor[i] == null) {
-                    this.pProductor[i] = new Productor(pAlmacen, spMutex, spProductor, spEnsamblador, this.getDias(2), 2, "Productor Parabrisas");
+                    this.pProductor[i] = new Productor(pAlmacen, spMutex, spProductor, spEnsamblador, this.getDias(2), 2);
                     this.pProductor[i].start();
                     this.pProdContador++;
                     return true;
@@ -154,7 +153,7 @@ public class Fabrica {
         } else {
             for (int i = 0; i < this.mProductor.length; i++) {
                 if (this.mProductor[i] == null) {
-                    this.mProductor[i] = new Productor(mAlmacen, smMutex, smProductor, smEnsamblador, this.getDias(3), 3, "Productor Motor");
+                    this.mProductor[i] = new Productor(mAlmacen, smMutex, smProductor, smEnsamblador, this.getDias(3), 3);
                     this.mProductor[i].start();
                     this.mProdContador++;
                     return true;

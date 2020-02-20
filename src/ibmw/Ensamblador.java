@@ -1,5 +1,5 @@
-
 package ibmw;
+
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -40,7 +40,6 @@ public class Ensamblador extends Thread{
 
                 this.srMutex.acquire();
                 for (int i = 0; i < 3; i++) {
-                    this.rAlm.producir(Fabrica.rCosPointer, 0);
                     Fabrica.rCosPointer = (Fabrica.rCosPointer + 1) % this.rAlm.getCapacidad();
                 }
                 Fabrica.subContadorR();
@@ -48,14 +47,12 @@ public class Ensamblador extends Thread{
 
                 this.spMutex.acquire();
                 for (int i = 0; i < 2; i++) {
-                    this.pAlm.producir(Fabrica.pCosPointer, 0);
                     Fabrica.pCosPointer = (Fabrica.pCosPointer + 1) % this.pAlm.getCapacidad();
                 }
                 Fabrica.subContadorP();
                 this.spMutex.release();
 
                 this.smMutex.acquire();
-                this.mAlm.producir(Fabrica.mCosPointer, 0);
                 Fabrica.mCosPointer = (Fabrica.mCosPointer + 1) % this.mAlm.getCapacidad();
                 Fabrica.subContadorM();
                 this.smMutex.release();

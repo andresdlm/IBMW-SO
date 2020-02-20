@@ -486,23 +486,9 @@ public class IBMW extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private Fabrica fabrica;
-    private int maxRuedas, maxParabrisas, maxMotores, maxEnsambladores, ruedasIniciales, parabrisasIniciales, motoresIniciales, ensambladoresIniciales;
-
     public void start(int tiempoDia, int tiempoParaDespacho, int maxRuedas, int maxParabrisas, int maxMotores, int maxEnsambladores, int ruedasIniciales, int parabrisasIniciales, int motoresIniciales, int ensambladoresIniciales, int eMesLimit, int mMesLimit, int dMesLimit) {
-
-        this.maxRuedas = maxRuedas;
-        this.maxParabrisas = maxParabrisas;
-        this.maxMotores = maxMotores;
-        this.maxEnsambladores = maxEnsambladores;
-        this.ruedasIniciales = ruedasIniciales;
-        this.parabrisasIniciales = parabrisasIniciales;
-        this.motoresIniciales = motoresIniciales;
-        this.ensambladoresIniciales = ensambladoresIniciales;
-
-
-        this.fabrica = new Fabrica(tiempoDia, tiempoParaDespacho, maxRuedas, maxParabrisas, maxMotores, maxEnsambladores, ruedasIniciales, parabrisasIniciales, motoresIniciales, ensambladoresIniciales, eMesLimit, mMesLimit, dMesLimit, this);
-        WindowUpdater windowUpdater = new WindowUpdater(this.fabrica, this.fabrica.getJefe(), this.fabrica.getGerente());
+        Fabrica fabrica = new Fabrica(tiempoDia, tiempoParaDespacho, maxRuedas, maxParabrisas, maxMotores, maxEnsambladores, ruedasIniciales, parabrisasIniciales, motoresIniciales, ensambladoresIniciales, eMesLimit, mMesLimit, dMesLimit);
+        WindowUpdater windowUpdater = new WindowUpdater(fabrica, fabrica.getJefe(), fabrica.getGerente());
         windowUpdater.start();
     }
 
