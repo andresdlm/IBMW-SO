@@ -43,19 +43,19 @@ public class Productor extends Thread{
                 switch (this.type) {
                     case 1:
                         this.alm.producir(Fabrica.rPointer, type);
-                        System.out.println("Rueda Producida || Space left " + this.alm.getSpaceLeft());
+                        System.out.println("Rueda Producida" + this.alm.getSpaceLeft());
                         Fabrica.rPointer = (Fabrica.rPointer + 1) % this.alm.getCapacidad();
                         Fabrica.aggContadorR();
                         break;
                     case 2:
                         this.alm.producir(Fabrica.pPointer, type);
-                        System.out.println("Parabrisas Producido || Space left " + this.alm.getSpaceLeft());
+                        System.out.println("Parabrisas Producido" + this.alm.getSpaceLeft());
                         Fabrica.pPointer = (Fabrica.pPointer + 1) % this.alm.getCapacidad();
                         Fabrica.aggContadorP();
                         break;
                     case 3:
                         this.alm.producir(Fabrica.mPointer, type);
-                        System.out.println("Motor Producido || Space left " + this.alm.getSpaceLeft());
+                        System.out.println("Motor Producido" + this.alm.getSpaceLeft());
                         Fabrica.mPointer = (Fabrica.mPointer + 1) % this.alm.getCapacidad();
                         Fabrica.aggContadorM();
                         break;
@@ -64,7 +64,7 @@ public class Productor extends Thread{
                 this.sEnsamblador.release();
             } catch (InterruptedException ex) {
                 Logger.getLogger(Productor.class.getName()).log(Level.SEVERE, null, ex);
-            }//getName cuidado (getNombre?)
+            }
         }
     }
     

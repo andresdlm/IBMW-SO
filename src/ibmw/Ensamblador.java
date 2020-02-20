@@ -67,7 +67,7 @@ public class Ensamblador extends Thread{
                 this.Entregar();
             } catch (InterruptedException ex) {
                 Logger.getLogger(Ensamblador.class.getName()).log(Level.SEVERE, null, ex);
-            }//getName cuidado (getNombre?)
+            }
         }
     }
 

@@ -25,7 +25,7 @@ public class WindowUpdater extends Thread {
             IBMW.nMotoresLabel.setText("" + this.fabrica.getContadorM());
             IBMW.estadoGerenteLabel.setText(this.gerente.estado());
             IBMW.estadoJefeLabel.setText(this.jefe.statusWaiter());
-
+            IBMW.diasDespachoLabel.setText(String.valueOf(Jefe.getDiasRestantes()));
         }
     }
 }

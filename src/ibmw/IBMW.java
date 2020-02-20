@@ -554,7 +554,7 @@ public class IBMW extends javax.swing.JFrame {
     public static javax.swing.JLabel cantProdRuedas;
     private javax.swing.JLabel carrosLabel;
     private javax.swing.JLabel despachoLabel;
-    private javax.swing.JLabel diasDespachoLabel;
+    public static javax.swing.JLabel diasDespachoLabel;
     private javax.swing.JLabel ensambladoresLabel;
     public static javax.swing.JLabel estadoGerenteLabel;
     public static javax.swing.JLabel estadoJefeLabel;
