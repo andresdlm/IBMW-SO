@@ -1,0 +1,10 @@
+tiempo en seg que dura un dia
+cant de dias entre despachos
+cant max de ruedas
+cant max de parabrisas
+cant max de motores
+cant inicial prod ruedas
+cant inicial prod parabrisas
+cant inicial prod motores
+La cantidad inicial de ensambladores.
+La cantidad máxima de ensambladores.
