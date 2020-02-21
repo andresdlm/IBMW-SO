@@ -34,7 +34,9 @@ public class Fabrica {
 
     private int tiempoDia;
 
-    /*private App app;*/
+    private int maxProdRuedas, maxProdParab, maxProdMotores, maxEnsamblador;
+
+
 
 
     public Fabrica(int tiempoDia, int diaHastaDespacho, int rProdLimit, int pProdLimit, int mProdLimit, int ensambladoresLimit, int rProdInit, int pProdInit, int mProdInit, int ensambladorInit, int rAlmacenLimit, int pAlmacenLimit, int mAlmacenLimit) {
@@ -58,6 +60,11 @@ public class Fabrica {
         this.srEnsamblador = new Semaphore(0);
         this.spEnsamblador = new Semaphore(0);
         this.smEnsamblador = new Semaphore(0);
+
+        this.maxProdRuedas = rProdLimit;
+        this.maxProdParab = pProdLimit;
+        this.maxProdMotores = mProdLimit;
+        this.maxEnsamblador = ensambladoresLimit;
 
         this.rProductor = new Productor[rProdLimit];
         this.pProductor = new Productor[pProdLimit];
@@ -325,5 +332,21 @@ public class Fabrica {
 
     public ibmw.Gerente getGerente() {
         return this.gerente;
+    }
+
+    public int getMaxProdRuedas() {
+        return maxProdRuedas;
+    }
+
+    public int getMaxProdParab() {
+        return maxProdParab;
+    }
+
+    public int getMaxProdMotores() {
+        return maxProdMotores;
+    }
+
+    public int getMaxEnsamblador() {
+        return maxEnsamblador;
     }
 }

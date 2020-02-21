@@ -54,7 +54,7 @@ public class IBMW extends javax.swing.JFrame {
         maxMotoresLabel = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         agregarEnsambladorButton = new javax.swing.JButton();
-        agregarEnsambladorButton1 = new javax.swing.JButton();
+        restarEnsambladorButton = new javax.swing.JButton();
         cantEnsambladoresLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -375,11 +375,11 @@ public class IBMW extends javax.swing.JFrame {
             }
         });
 
-        agregarEnsambladorButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        agregarEnsambladorButton1.setText("+");
-        agregarEnsambladorButton1.addActionListener(new java.awt.event.ActionListener() {
+        restarEnsambladorButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        restarEnsambladorButton.setText("+");
+        restarEnsambladorButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                agregarEnsambladorButton1ActionPerformed(evt);
+                restarEnsambladorButtonActionPerformed(evt);
             }
         });
 
@@ -423,7 +423,7 @@ public class IBMW extends javax.swing.JFrame {
                     .addGroup(almacenPanelLayout.createSequentialGroup()
                         .addGap(70, 70, 70)
                         .addGroup(almacenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(agregarEnsambladorButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(restarEnsambladorButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(agregarEnsambladorButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cantEnsambladoresLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(39, Short.MAX_VALUE))
@@ -463,7 +463,7 @@ public class IBMW extends javax.swing.JFrame {
                 .addGap(45, 45, 45)
                 .addComponent(agregarEnsambladorButton)
                 .addGap(18, 18, 18)
-                .addComponent(agregarEnsambladorButton1)
+                .addComponent(restarEnsambladorButton)
                 .addContainerGap(139, Short.MAX_VALUE))
         );
 
@@ -486,49 +486,130 @@ public class IBMW extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    Fabrica fabrica;
+
     public void start(int tiempoDia, int tiempoParaDespacho, int maxRuedas, int maxParabrisas, int maxMotores, int maxEnsambladores, int ruedasIniciales, int parabrisasIniciales, int motoresIniciales, int ensambladoresIniciales, int eMesLimit, int mMesLimit, int dMesLimit) {
-        Fabrica fabrica = new Fabrica(tiempoDia, tiempoParaDespacho, maxRuedas, maxParabrisas, maxMotores, maxEnsambladores, ruedasIniciales, parabrisasIniciales, motoresIniciales, ensambladoresIniciales, eMesLimit, mMesLimit, dMesLimit);
+        fabrica = new Fabrica(tiempoDia, tiempoParaDespacho, maxRuedas, maxParabrisas, maxMotores, maxEnsambladores, ruedasIniciales, parabrisasIniciales, motoresIniciales, ensambladoresIniciales, eMesLimit, mMesLimit, dMesLimit);
         WindowUpdater windowUpdater = new WindowUpdater(fabrica, fabrica.getJefe(), fabrica.getGerente());
         windowUpdater.start();
     }
 
 
     private void agregarEnsambladorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarEnsambladorButtonActionPerformed
-        // TODO add your handling code here:
+        contratarEnsamblador();
     }//GEN-LAST:event_agregarEnsambladorButtonActionPerformed
 
     private void agregarProdMotoresButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarProdMotoresButtonActionPerformed
-        // TODO add your handling code here:
+        contratarProdMotores();
     }//GEN-LAST:event_agregarProdMotoresButtonActionPerformed
 
     private void agregarProdRuedasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarProdRuedasButtonActionPerformed
-        // TODO add your handling code here:
+        contratarProdRuedas();
     }//GEN-LAST:event_agregarProdRuedasButtonActionPerformed
 
     private void agregarProdParabrisasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarProdParabrisasButtonActionPerformed
-        // TODO add your handling code here:
+        contratarProdParab();
     }//GEN-LAST:event_agregarProdParabrisasButtonActionPerformed
 
     private void restarProdMotoresButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restarProdMotoresButtonActionPerformed
-        // TODO add your handling code here:
+        despedirProdMotores();
     }//GEN-LAST:event_restarProdMotoresButtonActionPerformed
 
     private void restarProdParabrisasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restarProdParabrisasButtonActionPerformed
-        // TODO add your handling code here:
+        despedirProdParab();
     }//GEN-LAST:event_restarProdParabrisasButtonActionPerformed
 
     private void restarProdRuedasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restarProdRuedasButtonActionPerformed
-        // TODO add your handling code here:
+        despedirProdRuedas();
     }//GEN-LAST:event_restarProdRuedasButtonActionPerformed
 
-    private void agregarEnsambladorButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarEnsambladorButton1ActionPerformed
-        // TODO add your handling code here:
+    private void restarEnsambladorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarEnsambladorButton1ActionPerformed
+        despedirEnsamblador();
     }//GEN-LAST:event_agregarEnsambladorButton1ActionPerformed
 
+    private void contratarProdRuedas() {
+        this.fabrica.contrProductorR();
+        if (this.fabrica.getProductorRContador() == this.fabrica.getMaxProdRuedas()) {
+            this.agregarProdRuedasButton.setEnabled(false);
+        }
+        if (!this.restarProdRuedasButton.isEnabled()) {
+            this.restarProdRuedasButton.setEnabled(true);
+        }
+    }
+
+    private void contratarProdParab() {
+        this.fabrica.contrProductorP();
+        if (this.fabrica.getProductorPContador() == fabrica.getMaxProdParab()) {
+            this.agregarProdParabrisasButton.setEnabled(false);
+        }
+        if (!this.restarProdParabrisasButton.isEnabled()) {
+            this.restarProdParabrisasButton.setEnabled(true);
+        }
+    }
+
+    private void contratarProdMotores() {
+        this.fabrica.contrProductorM();
+        if (this.fabrica.getProductorMContador() == fabrica.getMaxProdMotores()) {
+            this.agregarProdMotoresButton.setEnabled(false);
+        }
+        if (!this.restarProdMotoresButton.isEnabled()) {
+            this.restarProdMotoresButton.setEnabled(true);
+        }
+    }
+
+    private void contratarEnsamblador() {
+        this.fabrica.contrEnsamblador();
+        if (this.fabrica.getEnsambladorContador() == fabrica.getMaxEnsamblador()) {
+            this.agregarEnsambladorButton.setEnabled(false);
+        }
+        if (!this.restarEnsambladorButton.isEnabled()) {
+            this.restarEnsambladorButton.setEnabled(true);
+        }
+    }
+
+    private void despedirProdRuedas() {
+        this.fabrica.despedirProductorR();
+        if (this.fabrica.getProductorRContador() == 0) {
+            this.restarProdRuedasButton.setEnabled(false);
+        }
+        if (!this.agregarProdRuedasButton.isEnabled()) {
+            this.agregarProdRuedasButton.setEnabled(true);
+        }
+    }
+
+    private void despedirProdParab() {
+        this.fabrica.despedirProductorP();
+        if (this.fabrica.getProductorPContador() == 0) {
+            this.restarProdParabrisasButton.setEnabled(false);
+        }
+        if (!this.agregarProdParabrisasButton.isEnabled()) {
+            this.agregarProdParabrisasButton.setEnabled(true);
+        }
+    }
+
+    private void despedirProdMotores() {
+        this.fabrica.despedirProductorM();
+        if (this.fabrica.getProductorMContador() == 0) {
+            this.restarProdMotoresButton.setEnabled(false);
+        }
+        if (!this.agregarProdMotoresButton.isEnabled()) {
+            this.agregarProdMotoresButton.setEnabled(true);
+        }
+    }
+
+    private void despedirEnsamblador() {
+        this.fabrica.despedirEnsamblador();
+        if (this.fabrica.getEnsambladorContador() == 0) {
+            this.restarEnsambladorButton.setEnabled(false);
+        }
+        if (!this.agregarEnsambladorButton.isEnabled()) {
+            this.agregarEnsambladorButton.setEnabled(true);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agregarEnsambladorButton;
-    private javax.swing.JButton agregarEnsambladorButton1;
+    private javax.swing.JButton restarEnsambladorButton;
     private javax.swing.JButton agregarProdMotoresButton;
     private javax.swing.JButton agregarProdParabrisasButton;
     private javax.swing.JButton agregarProdRuedasButton;
