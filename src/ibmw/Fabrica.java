@@ -11,16 +11,16 @@ public class Fabrica {
     //  ALMACENES
     private Almacen rAlmacen, pAlmacen, mAlmacen;
 
-    //  PRODUCTORES (Chefs)
+    //  PRODUCTORES
     private Productor[] rProductor, pProductor, mProductor;
 
-    //  ENSAMBLADORES (waiters=ensambladores)
+    //  ENSAMBLADORES
     private Ensamblador[] ensambladores;
 
-    //  GERENTE (manager=gerente)
+    //  GERENTE
     private Gerente gerente;
 
-    //  JEFE (wboss=jefe; Writer = Jefe)
+    //  JEFE
     private Jefe jefe;
 
     //  CONTADORES DE PRODUCTORES
